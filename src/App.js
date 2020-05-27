@@ -3,8 +3,15 @@ import Navbar from './navbar/Navbar';
 import FormField from './formfield/FormField'
 import CoolButton from './coolButton/CoolButton'
 import { render } from 'react-dom';
+import 'bulma/css/bulma.css';
+
 
 const App = () => {
+  const buttonStyle = {
+    isPrimary: 'is-primary',
+    isSuccess: 'is-success',
+    isDanger: 'is-danger',
+}
   return (
     <div>
       <Navbar />
@@ -13,7 +20,8 @@ const App = () => {
       <FormField label="phone" type="number" placeholder="12345" />
 
       {/* <CoolButton /> */}
-      <CoolButton className={buttonStyle.isSuccess} title="Button 33333" />
+      <CoolButton className={buttonStyle.isSuccess} title="Login" />
+      <CoolButton className={buttonStyle.isDanger} title="Sign up" />
 
     </div>
   )
