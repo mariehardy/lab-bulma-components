@@ -2,25 +2,28 @@ import React from 'react';
 import 'bulma/css/bulma.css';
 
 
-const formatButton = (buttonStyle) => {
-    return `${buttonStyle.isSuccess}`;
-  }
+  // isPrimary: 'is-primary',
+  // isSuccess: 'is-success',
+  // isDanger: 'is-danger',
+  // isRounded: 'is-rounded',
 
-  const buttonStyle = {
-    isPrimary: 'is-primary',
-    isSuccess: 'is-success',
-    isDanger: 'is-danger',
-    isRounded: 'is-rounded',
-}
 
 const CoolButton = (props) => {
 
+  let classesArray = ["button"]
+
+  if (props.isDanger === true) {
+  classesArray.push("is-danger")
+}
+if (props.isSmall === true) {
+  classesArray.push("is-small")
+}
+
+// SWITCH CASE !!!
+
+
     return (
-      <div className='buttons'>
-        <button className="button is-small my-class"  >{props.title}</button>
-        {/* className={formatButton(buttonStyle)} */}
-        {/* <button className="button is-small is-success">Button 2</button> */}
-      </div>
+        <button className={classesArray.join(' ')}>{props.title}</button>
     );
   };
 
